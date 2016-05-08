@@ -37,3 +37,9 @@ The USER is switched to `www-data` here to satisfy WP-CLI requirements.
 
 The WORKDIR is changed to `/var/www/html`, HOME is set to `/var/www`, the WP-CLI
 bash completion is installed there.
+
+## Used in
+
+Following projects use this image:
+
+* [Dockerpresso](https://github.com/michaloo/dockerpresso)
