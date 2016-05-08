@@ -8,7 +8,8 @@ ENV WPCLI_VERSION 0.23.1
 RUN apt-get update \
     && apt-get install -y less \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && docker-php-ext-install zip
 
 # Install wp-cli
 RUN curl -OL https://github.com/wp-cli/wp-cli/releases/download/v${WPCLI_VERSION}/wp-cli-${WPCLI_VERSION}.phar \
@@ -20,6 +21,8 @@ RUN curl -o /wp-completion.bash https://raw.githubusercontent.com/wp-cli/wp-cli/
     && mkdir -p /var/www \
     && echo 'source /wp-completion.bash' > /var/www/.bashrc \
     && chown www-data:www-data -R /var/www
+
+RUN echo 'date.timezone=utc' > /usr/local/etc/php/php.ini
 
 # Switch user to www-data (wp-cli doesn't allow being executed as root)
 USER www-data
