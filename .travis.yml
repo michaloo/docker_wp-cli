@@ -1,0 +1,12 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+before_install:
+  - docker build -t michaloo/wp-cli .
+
+script:
+  - docker run -it --rm michaloo/wp-cli bash -c '[[ `wp --version` = "WP-CLI $WPCLI_VERSION" ]]'
