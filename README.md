@@ -3,6 +3,8 @@
 Want to run [WP-CLI](https://wp-cli.org/) command over your Wordpress
 installation? Use this image :)
 
+[![Build Status](https://travis-ci.org/michaloo/docker_wp-cli.svg?branch=master)](https://travis-ci.org/michaloo/docker_wp-cli)
+
 ## Installation
 
 `docker pull michaloo/wp-cli`
