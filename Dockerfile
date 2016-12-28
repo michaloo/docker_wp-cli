@@ -2,7 +2,7 @@
 FROM michaloo/wordpress-simplified
 
 CMD ["bash"]
-ENV WPCLI_VERSION 0.25.0
+ENV WPCLI_VERSION 1.0.0
 
 # Add wp-cli less dep
 RUN apt-get update \
