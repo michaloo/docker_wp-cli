@@ -6,7 +6,7 @@ ENV WPCLI_VERSION 1.0.0
 
 # Add wp-cli less dep
 RUN apt-get update \
-    && apt-get install -y less \
+    && apt-get install -y less mysql-client \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && docker-php-ext-install zip
